@@ -11,9 +11,14 @@ namespace WebApplicationProducts.DAO
 
         private ProductsEntities context;
 
+        public Product_PhoneDAO Phones;
+        public Product_ClotheDAO Clothes;
+
         public ProductDAO(ProductsEntities context)
         {
             this.context = context;
+            this.Phones = new Product_PhoneDAO(context);
+            this.Clothes = new Product_ClotheDAO(context);
         }
 
         public int Add(Product product)

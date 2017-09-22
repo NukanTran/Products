@@ -84,7 +84,9 @@ warning 6002: The table/view 'Products.dbo.OrderView' does not have a primary ke
     <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_ORDER_REFERENCE_CUSTOMER">
-    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Order" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customer">
@@ -96,7 +98,9 @@ warning 6002: The table/view 'Products.dbo.OrderView' does not have a primary ke
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ORDERITE_REFERENCE_ORDER">
-    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Order">
@@ -108,7 +112,9 @@ warning 6002: The table/view 'Products.dbo.OrderView' does not have a primary ke
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ORDERITE_REFERENCE_PRODUCT">
-    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
@@ -120,7 +126,9 @@ warning 6002: The table/view 'Products.dbo.OrderView' does not have a primary ke
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PRODUCT_REFERENCE_SUPPLIER">
-    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Supplier">

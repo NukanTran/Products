@@ -27,8 +27,10 @@ namespace WebApplicationProducts.Models
         public string Package { get; set; }
         public bool IsDiscontinued { get; set; }
     
+        public virtual Cloth Cloth { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public virtual Phone Phone { get; set; }
         public virtual Supplier Supplier { get; set; }
     }
 }

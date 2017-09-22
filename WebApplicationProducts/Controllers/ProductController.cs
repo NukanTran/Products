@@ -14,7 +14,8 @@ namespace WebApplicationProducts.Controllers
     {
         private ProductContext context;
 
-        ProductController()
+
+        public ProductController()
         {
             context = new ProductContext();
             context.SetLazyLoadingEnabled(false);

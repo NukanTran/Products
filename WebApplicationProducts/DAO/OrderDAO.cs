@@ -60,5 +60,10 @@ namespace WebApplicationProducts.DAO
         {
             return context.Orders.Any(s => s.Id == id);
         }
+
+        public List<Order> GetListByDate(int page, int count, DateTime fromDate, DateTime toDate)
+        {
+            return context.Orders.Where(o => o.OrderDate >= fromDate && o.OrderDate <= toDate).OrderBy(v => v.OrderDate).Skip(page - 1).Take(count).ToList();
+        }
     }
 }

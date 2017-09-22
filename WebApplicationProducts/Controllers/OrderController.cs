@@ -48,6 +48,23 @@ namespace WebApplicationProducts.Controllers
             return new ResultObject(true, context.Orders.GetListPaging(page, count));
         }
 
+        [HttpGet]
+        [Route("GetListByDate/{page}/{count}/{fromDate}/{toDate}")]
+        public ResultObject GetListByDate(int page, int count, string fromDate, string toDate)
+        {
+            try
+            {
+                var format = "dd-MM-yyyy";
+                var from = DateTime.ParseExact(fromDate, format, null);
+                var to = DateTime.ParseExact(toDate, format, null);
+                return new ResultObject(true, context.Orders.GetListByDate(page, count, from, to));
+            }
+            catch(FormatException e)
+            {
+                return new ResultObject(false, "", e.Message);
+            }
+        }
+
         [HttpPost]
         [Route("Insert")]
         public ResultObject Insert([FromBody]Order req)

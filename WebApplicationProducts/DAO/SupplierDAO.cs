@@ -15,10 +15,14 @@ namespace WebApplicationProducts.DAO
             this.context = context;
         }
 
-        public bool Add(Supplier supplier)
+        public int Add(Supplier supplier)
         {
-            context.Suppliers.Add(supplier);
-            return context.SaveChanges() > 0;
+            var res = context.Suppliers.Add(supplier);
+            if(context.SaveChanges() > 0)
+            {
+                return res.Id;
+            }
+            return -1;
         }
 
         public bool Update(Supplier supplier)
