@@ -31,7 +31,6 @@ namespace ProductApp.API.Controllers
         private OrderController()
         {
             context = new ProductContext();
-            context.SetLazyLoadingEnabled(false);
         }
 
         [HttpGet]
@@ -40,10 +39,7 @@ namespace ProductApp.API.Controllers
         {
             if (context.Orders.Contains(id))
             {
-                var res = context.Orders.Get(id);
-                res.Customer = context.Customers.Get(res.CustomerId);
-                //res.OrderItems = context.OrderItems.GetListByOrder(id);
-                return new ResultObject(true, res);
+                return new ResultObject(true, context.Orders.Get(id).ToViewModel());
             }
             return new ResultObject(false, "", "Id not found");
         }
@@ -52,7 +48,7 @@ namespace ProductApp.API.Controllers
         [Route("GetAll")]
         public ResultObject GetAll()
         {
-            return new ResultObject(true, context.Orders.GetAll());
+            return new ResultObject(true, context.Orders.GetAll().ToViewModel(), context.Orders.Count());
         }
 
         [HttpGet]
@@ -60,7 +56,7 @@ namespace ProductApp.API.Controllers
         public ResultObject GetListPaging(int page, int size)
         {
             int total = 1;
-            return new ResultObject(true, context.Orders.GetListPaging(out total, page, size), total);
+            return new ResultObject(true, context.Orders.GetListPaging(out total, page, size).ToViewModel(), total);
         }
 
         [HttpGet]
@@ -68,7 +64,7 @@ namespace ProductApp.API.Controllers
         public ResultObject GetListByCustomer(int customerId, int page, int size)
         {
             int total = 1;
-            return new ResultObject(true, context.Orders.GetListByCustomer(customerId, out total, page, size), total);
+            return new ResultObject(true, context.Orders.GetListByCustomer(customerId, out total, page, size).ToViewModel(), total);
         }
 
         [HttpGet]
@@ -81,7 +77,7 @@ namespace ProductApp.API.Controllers
                 var from = DateTime.ParseExact(fromDate, format, null);
                 var to = DateTime.ParseExact(toDate, format, null);
                 int total = 1;
-                return new ResultObject(true, context.Orders.GetListByDate(from, to, out total, page, size), total);
+                return new ResultObject(true, context.Orders.GetListByDate(from, to, out total, page, size).ToViewModel(), total);
             }
             catch (FormatException e)
             {
@@ -93,7 +89,7 @@ namespace ProductApp.API.Controllers
         [Route("Insert")]
         public ResultObject Insert([FromBody]Order req)
         {
-            return new ResultObject(true, context.Orders.Add(req));
+            return new ResultObject(true, context.Orders.Add(req).Id);
         }
 
         [HttpPost]

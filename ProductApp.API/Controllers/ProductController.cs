@@ -28,7 +28,6 @@ namespace ProductApp.API.Controllers
         public ProductController()
         {
             context = new ProductContext();
-            context.SetLazyLoadingEnabled(false);
         }
 
         [HttpGet]
@@ -37,12 +36,7 @@ namespace ProductApp.API.Controllers
         {
             if (context.Products.Contains(id))
             {
-                //var res = context.Products.Get(id);
-                //res.Supplier = context.Suppliers.Get(res.SupplierId);
-                //return new ResultObject(true, res);
-                string[] includes = { "Supplier" };
-                var res = context.Products.Get(p => p.Id == id, includes);
-                return new ResultObject(true, res);
+                return new ResultObject(true, context.Products.Get(id).ToViewModel());
             }
             return new ResultObject(false, "", "Id not found");
         }
@@ -51,7 +45,7 @@ namespace ProductApp.API.Controllers
         [Route("GetAll")]
         public ResultObject GetAll()
         {
-            return new ResultObject(true, context.Products.GetAll());
+            return new ResultObject(true, context.Products.GetAll().ToViewModel(), context.Products.Count());
         }
 
         [HttpGet]
@@ -59,7 +53,7 @@ namespace ProductApp.API.Controllers
         public ResultObject GetListPaging(int page, int size)
         {
             int total = 1;
-            return new ResultObject(true, context.Products.GetListPaging(out total, page, size), total);
+            return new ResultObject(true, context.Products.GetListPaging(out total, page, size).ToViewModel(), total);
         }
 
         [HttpGet]
@@ -68,8 +62,10 @@ namespace ProductApp.API.Controllers
         {
             if (context.Suppliers.Contains(supplierId))
             {
+                //int total = 1;
+                //return new ResultObject(true, context.Orders.GetListByCustomer(customerId, out total, page, size), total);
                 int total = 1;
-                return new ResultObject(true, context.Products.GetListBySupplier(supplierId, out total, page, size), total);
+                return new ResultObject(true, context.Products.GetListBySupplier(supplierId, out total, page, size).ToViewModel(), total);
             }
             return new ResultObject(false, "", "SupplierId not found");
         }
@@ -78,7 +74,7 @@ namespace ProductApp.API.Controllers
         [Route("Insert")]
         public ResultObject Insert([FromBody]Product req)
         {
-            return new ResultObject(true, context.Products.Add(req));
+            return new ResultObject(true, context.Products.Add(req).Id);
         }
 
         [HttpPost]

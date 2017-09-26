@@ -32,10 +32,5 @@ namespace ProductApp.DAL
             Orders = new OrderDAO(dbFactory);
             OrderItems = new OrderItemDAO(dbFactory);
         }
-
-        public void SetLazyLoadingEnabled(bool value)
-        {
-            Context.Configuration.LazyLoadingEnabled = value;
-        }
     }
 }

@@ -92,6 +92,8 @@ C:\Users\lam.tran\Documents\ProductManager\ProductApp.API\obj\Debug\ProductApp.A
 C:\Users\lam.tran\Documents\ProductManager\ProductApp.API\obj\Debug\ProductApp.API.pdb
 C:\Users\lam.tran\Documents\ProductManager\ProductApp.API\bin\EntityFramework.SqlServer.dll
 C:\Users\lam.tran\Documents\ProductManager\ProductApp.API\bin\EntityFramework.SqlServer.xml
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\obj\Debug\ProductApp.API.csprojResolveAssemblyReference.cache
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\obj\Debug\ProductApp.API.csproj.CoreCompileInputs.cache
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\ApplicationInsights.config
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\roslyn\csc.exe
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -108,6 +110,7 @@ C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\roslyn\VBCSCom
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\ProductApp.API.dll.config
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\ProductApp.API.dll
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\ProductApp.API.pdb
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\AutoMapper.dll
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\EntityFramework.dll
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\EntityFramework.SqlServer.dll
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\Microsoft.AI.Agent.Intercept.dll
@@ -125,6 +128,7 @@ C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\System.Web.Htt
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\System.Web.Http.WebHost.dll
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\ProductApp.DAL.pdb
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\ProductApp.DAL.dll.config
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\AutoMapper.xml
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\EntityFramework.xml
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\EntityFramework.SqlServer.xml
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\Microsoft.AI.DependencyCollector.xml
@@ -137,7 +141,5 @@ C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\Newtonsoft.Jso
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\System.Net.Http.Formatting.xml
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\System.Web.Http.xml
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\bin\System.Web.Http.WebHost.xml
-C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\obj\Debug\ProductApp.API.csprojResolveAssemblyReference.cache
-C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\obj\Debug\ProductApp.API.csproj.CoreCompileInputs.cache
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\obj\Debug\ProductApp.API.dll
 C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.API\obj\Debug\ProductApp.API.pdb

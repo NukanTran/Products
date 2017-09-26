@@ -1,4 +1,9 @@
-﻿namespace ProductApp.API.Controllers
+﻿using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web.Http;
+
+namespace ProductApp.API.Controllers
 {
     public class ResultObject
     {
@@ -22,5 +27,6 @@
             this.total = total;
             this.element = element;
         }
+        
     }
 }

@@ -11,7 +11,6 @@ namespace ProductApp.API.Controllers
         public PhoneController()
         {
             context = new ProductContext();
-            context.SetLazyLoadingEnabled(false);
         }
 
         [HttpGet]
@@ -20,12 +19,7 @@ namespace ProductApp.API.Controllers
         {
             if (context.Phones.Contains(id))
             {
-                //var res = context.Phones.Get(id);
-                //res.Supplier = context.Suppliers.Get(res.SupplierId);
-                //return new ResultObject(true, res);
-                string[] includes = { "Supplier" };
-                var res = context.Phones.Get(p => p.Id == id, includes);
-                return new ResultObject(true, res);
+                return new ResultObject(true, context.Phones.Get(id).ToViewModel());
             }
             return new ResultObject(false, "", "Id not found");
         }
@@ -34,7 +28,7 @@ namespace ProductApp.API.Controllers
         [Route("GetAll")]
         public ResultObject GetAll()
         {
-            return new ResultObject(true, context.Phones.GetAll());
+            return new ResultObject(true, context.Phones.GetAll().ToViewModel(), context.Phones.Count());
         }
 
         [HttpGet]
@@ -42,7 +36,7 @@ namespace ProductApp.API.Controllers
         public ResultObject GetListPaging(int page, int size)
         {
             int total = 1;
-            return new ResultObject(true, context.Phones.GetListPaging(out total, page, size), total);
+            return new ResultObject(true, context.Phones.GetListPaging(out total, page, size).ToViewModel(), total);
         }
 
         [HttpGet]
@@ -52,7 +46,7 @@ namespace ProductApp.API.Controllers
             if (context.Suppliers.Contains(supplierId))
             {
                 int total = 1;
-                return new ResultObject(true, context.Phones.GetListBySupplier(supplierId, out total, page, size), total);
+                return new ResultObject(true, context.Phones.GetListBySupplier(supplierId, out total, page, size).ToViewModel(), total);
             }
             return new ResultObject(false, "", "SupplierId not found");
         }
@@ -61,7 +55,7 @@ namespace ProductApp.API.Controllers
         [Route("Insert")]
         public ResultObject Insert([FromBody]Product_Phone req)
         {
-            return new ResultObject(true, context.Phones.Add(req));
+            return new ResultObject(true, context.Phones.Add(req).Id);
         }
 
         [HttpPost]
