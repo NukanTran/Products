@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using ProductApp.DAL;
 using System.Web.Http;
-using ProductApp.DAL;
 
 namespace ProductApp.API.Controllers
 {
     [RoutePrefix("api/product/phone")]
-    public class PhoneController : ApiController
+    public class PhoneController : ApiController, IProductController<Product_Phone>
     {
         private ProductContext context;
 

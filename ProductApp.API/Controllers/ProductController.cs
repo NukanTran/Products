@@ -1,18 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using ProductApp.DAL;
 using System.Web.Http;
-using ProductApp.DAL;
 
 namespace ProductApp.API.Controllers
 {
+    public interface IProductController<T> where T : Product
+    {
+        ResultObject Get(int id);
+
+        ResultObject GetAll();
+
+        ResultObject GetListPaging(int page, int size);
+
+        ResultObject GetListBySupplier(int supplierId, int page, int size);
+
+        ResultObject Insert([FromBody]T req);
+
+        ResultObject Update([FromBody]T req);
+
+        ResultObject Delete(int id);
+    }
+
     [RoutePrefix("api/product")]
-    public class ProductController : ApiController
+    public class ProductController : ApiController, IProductController<Product>
     {
         private ProductContext context;
-        
+
         public ProductController()
         {
             context = new ProductContext();
@@ -90,6 +102,5 @@ namespace ProductApp.API.Controllers
             }
             return new ResultObject(false, "", "Id not found");
         }
-
     }
 }

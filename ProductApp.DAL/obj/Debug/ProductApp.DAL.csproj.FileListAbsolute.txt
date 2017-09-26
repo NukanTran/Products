@@ -19,3 +19,14 @@ C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.D
 C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.csproj.CoreCompileInputs.cache
 C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.dll
 C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.pdb
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\bin\Debug\ProductApp.DAL.dll.config
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\bin\Debug\ProductApp.DAL.dll
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\bin\Debug\ProductApp.DAL.pdb
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\bin\Debug\EntityFramework.dll
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\bin\Debug\EntityFramework.xml
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\obj\Debug\ProductApp.DAL.csprojResolveAssemblyReference.cache
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\obj\Debug\ProductApp.DAL.csproj.CoreCompileInputs.cache
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\obj\Debug\ProductApp.DAL.dll
+C:\Users\lam.tran\Documents\GIT\Products\Nukan\ProductApp.DAL\obj\Debug\ProductApp.DAL.pdb

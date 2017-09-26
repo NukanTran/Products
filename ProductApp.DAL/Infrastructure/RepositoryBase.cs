@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductApp.DAL.Infrastructure
 {
@@ -28,16 +26,17 @@ namespace ProductApp.DAL.Infrastructure
             this.DbFactory = dbFactory;
             this.dbSet = this.DbContext.Set<T>();
         }
- 
+
         public virtual T Add(T entity)
         {
             var res = dbSet.Add(entity);
             DbContext.SaveChanges();
             return res;
         }
+
         public virtual bool AddRange(IEnumerable<T> entitys)
         {
-            foreach(var entity in entitys)
+            foreach (var entity in entitys)
             {
                 dbSet.Add(entity);
             }

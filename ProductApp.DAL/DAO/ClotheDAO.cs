@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ProductApp.DAL.Infrastructure;
+﻿using ProductApp.DAL.Infrastructure;
 
 namespace ProductApp.DAL.DAO
 {
@@ -12,6 +7,5 @@ namespace ProductApp.DAL.DAO
         public ClotheDAO(IDbFactory dbFactory) : base(dbFactory)
         {
         }
-        
     }
 }

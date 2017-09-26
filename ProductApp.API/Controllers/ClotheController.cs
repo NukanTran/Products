@@ -1,90 +1,89 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Net;
-//using System.Net.Http;
-//using System.Web.Http;
-//using WebApplicationProducts.Models;
-//using WebApplicationProducts.DAO;
+﻿using ProductApp.DAL;
+using System.Web.Http;
 
-//namespace WebApplicationProducts.Controllers
-//{
-//    [RoutePrefix("api/product/clothe")]
-//    public class ClotheController : ApiController
-//    {
-//        private ProductContext context;
+namespace ProductApp.API.Controllers
+{
+    [RoutePrefix("api/product/clothe")]
+    public class ClotheController : ApiController, IProductController<Product_Clothe>
+    {
+        private ProductContext context;
 
-//        ClotheController()
-//        {
-//            context = new ProductContext();
-//            context.SetLazyLoadingEnabled(false);
-//        }
+        public ClotheController()
+        {
+            context = new ProductContext();
+            context.SetLazyLoadingEnabled(false);
+        }
 
-//        [HttpGet]
-//        [Route("GetById/{id}")]
-//        public ResultObject Get(int id)
-//        {
-//            if (context.Products.Clothes.Exists(id))
-//            {
-//                var res = context.Products.Clothes.Get(id);
-//                res.Supplier = context.Suppliers.Get(res.SupplierId);
-//                return new ResultObject(true, res);
-//            }
-//            return new ResultObject(false, "", "Id not found");
-//        }
+        [HttpGet]
+        [Route("GetById/{id}")]
+        public ResultObject Get(int id)
+        {
+            if (context.Clothes.Contains(id))
+            {
+                //var res = context.Clothes.Get(id);
+                //res.Supplier = context.Suppliers.Get(res.SupplierId);
+                //return new ResultObject(true, res);
+                string[] includes = { "Supplier" };
+                var res = context.Clothes.Get(p => p.Id == id, includes);
+                return new ResultObject(true, res);
+            }
+            return new ResultObject(false, "", "Id not found");
+        }
 
-//        [HttpGet]
-//        [Route("GetAll")]
-//        public ResultObject GetAll()
-//        {
-//            return new ResultObject(true, context.Products.Clothes.GetAll());
-//        }
+        [HttpGet]
+        [Route("GetAll")]
+        public ResultObject GetAll()
+        {
+            return new ResultObject(true, context.Clothes.GetAll());
+        }
 
-//        [HttpGet]
-//        [Route("GetListPaging/{page}/{count}")]
-//        public ResultObject GetListPaging(int page, int count)
-//        {
-//            return new ResultObject(true, context.Products.Clothes.GetListPaging(page, count));
-//        }
+        [HttpGet]
+        [Route("GetListPaging/{page}/{size}")]
+        public ResultObject GetListPaging(int page, int size)
+        {
+            int total = 1;
+            return new ResultObject(true, context.Clothes.GetListPaging(out total, page, size), total);
+        }
 
-//        [HttpGet]
-//        [Route("GetListBySupplier/{page}/{count}/{supplierId}")]
-//        public ResultObject GetListBySupplier(int page, int count, int supplierId)
-//        {
-//            if (context.Suppliers.Exists(supplierId))
-//            {
-//                return new ResultObject(true, context.Products.Clothes.GetListBySupplier(page, count, supplierId));
-//            }
-//            return new ResultObject(false, "", "SupplierId not found");
-//        }
+        [HttpGet]
+        [Route("GetListBySupplier/{supplierId}/{page}/{size}")]
+        public ResultObject GetListBySupplier(int supplierId, int page, int size)
+        {
+            if (context.Suppliers.Contains(supplierId))
+            {
+                int total = 1;
+                return new ResultObject(true, context.Clothes.GetListBySupplier(supplierId, out total, page, size), total);
+            }
+            return new ResultObject(false, "", "SupplierId not found");
+        }
 
-//        [HttpPost]
-//        [Route("Insert")]
-//        public ResultObject Insert([FromBody]Product_Clothe req)
-//        {
-//            return new ResultObject(true, context.Products.Add(req));
-//        }
+        [HttpPost]
+        [Route("Insert")]
+        public ResultObject Insert([FromBody]Product_Clothe req)
+        {
+            return new ResultObject(true, context.Clothes.Add(req));
+        }
 
-//        [HttpPost]
-//        [Route("Update")]
-//        public ResultObject Update([FromBody]Product_Clothe req)
-//        {
-//            if (context.Products.Clothes.Exists(req.Id))
-//            {
-//                return new ResultObject(true, context.Products.Clothes.Update(req));
-//            }
-//            return new ResultObject(false, "", "Id not found");
-//        }
+        [HttpPost]
+        [Route("Update")]
+        public ResultObject Update([FromBody]Product_Clothe req)
+        {
+            if (context.Clothes.Contains(req.Id))
+            {
+                return new ResultObject(true, context.Clothes.Update(req));
+            }
+            return new ResultObject(false, "", "Id not found");
+        }
 
-//        [HttpGet]
-//        [Route("Delete/{id}")]
-//        public ResultObject Delete(int id)
-//        {
-//            if (context.Products.Clothes.Exists(id))
-//            {
-//                return new ResultObject(true, context.Products.Delete(id));
-//            }
-//            return new ResultObject(false, "", "Id not found");
-//        }
-//    }
-//}
+        [HttpGet]
+        [Route("Delete/{id}")]
+        public ResultObject Delete(int id)
+        {
+            if (context.Clothes.Contains(id))
+            {
+                return new ResultObject(true, context.Clothes.Delete(id));
+            }
+            return new ResultObject(false, "", "Id not found");
+        }
+    }
+}

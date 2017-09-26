@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ProductApp.API.Controllers
+﻿namespace ProductApp.API.Controllers
 {
     public class ResultObject
     {

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductApp.DAL.Infrastructure
 {
@@ -20,6 +16,7 @@ namespace ProductApp.DAL.Infrastructure
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
         private void Dispose(bool disposing)
         {
             if (!isDisposed && disposing)
@@ -33,7 +30,6 @@ namespace ProductApp.DAL.Infrastructure
         // Ovveride this to dispose custom objects
         protected virtual void DisposeCore()
         {
-
         }
     }
 }
