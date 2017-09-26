@@ -1,0 +1,21 @@
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\bin\Debug\ProductApp.DAL.dll.config
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\bin\Debug\ProductApp.DAL.dll
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\bin\Debug\ProductApp.DAL.pdb
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.dll
+C:\Users\Nukan\OneDrive\Documents\Visual Studio 2015\WebSites\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.pdb
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\bin\Debug\ProductApp.DAL.dll.config
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\bin\Debug\ProductApp.DAL.dll
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\bin\Debug\ProductApp.DAL.pdb
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\bin\Debug\EntityFramework.dll
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\bin\Debug\EntityFramework.xml
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.csprojResolveAssemblyReference.cache
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.csproj.CoreCompileInputs.cache
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.dll
+C:\Users\lam.tran\Documents\ProductManager\ProductApp.DAL\obj\Debug\ProductApp.DAL.pdb

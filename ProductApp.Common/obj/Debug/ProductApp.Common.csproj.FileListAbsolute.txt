@@ -1,6 +1,0 @@
-C:\Users\lam.tran\Documents\Visual Studio 2017\Projects\ProductManager\ProductApp.Common\bin\Debug\ProductApp.Common.dll
-C:\Users\lam.tran\Documents\Visual Studio 2017\Projects\ProductManager\ProductApp.Common\bin\Debug\ProductApp.Common.pdb
-C:\Users\lam.tran\Documents\Visual Studio 2017\Projects\ProductManager\ProductApp.Common\obj\Debug\ProductApp.Common.csprojResolveAssemblyReference.cache
-C:\Users\lam.tran\Documents\Visual Studio 2017\Projects\ProductManager\ProductApp.Common\obj\Debug\ProductApp.Common.csproj.CoreCompileInputs.cache
-C:\Users\lam.tran\Documents\Visual Studio 2017\Projects\ProductManager\ProductApp.Common\obj\Debug\ProductApp.Common.dll
-C:\Users\lam.tran\Documents\Visual Studio 2017\Projects\ProductManager\ProductApp.Common\obj\Debug\ProductApp.Common.pdb

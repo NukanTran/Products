@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using ProductApp.Data;
+using ProductApp.DAL;
 
 namespace ProductApp.API.Controllers
 {
@@ -12,8 +12,7 @@ namespace ProductApp.API.Controllers
     public class ProductController : ApiController
     {
         private ProductContext context;
-
-
+        
         public ProductController()
         {
             context = new ProductContext();
@@ -24,10 +23,13 @@ namespace ProductApp.API.Controllers
         [Route("GetById/{id}")]
         public ResultObject Get(int id)
         {
-            if (context.Products.Exists(id))
+            if (context.Products.Contains(id))
             {
-                var res = context.Products.Get(id);
-                res.Supplier = context.Suppliers.Get(res.SupplierId);
+                //var res = context.Products.Get(id);
+                //res.Supplier = context.Suppliers.Get(res.SupplierId);
+                //return new ResultObject(true, res);
+                string[] includes = { "Supplier" };
+                var res = context.Products.Get(p => p.Id == id, includes);
                 return new ResultObject(true, res);
             }
             return new ResultObject(false, "", "Id not found");
@@ -41,19 +43,21 @@ namespace ProductApp.API.Controllers
         }
 
         [HttpGet]
-        [Route("GetListPaging/{page}/{count}")]
-        public ResultObject GetListPaging(int page, int count)
+        [Route("GetListPaging/{page}/{size}")]
+        public ResultObject GetListPaging(int page, int size)
         {
-            return new ResultObject(true, context.Products.GetListPaging(page, count));
+            int total = 1;
+            return new ResultObject(true, context.Products.GetListPaging(out total, page, size), total);
         }
 
         [HttpGet]
-        [Route("GetListBySupplier/{page}/{count}/{supplierId}")]
-        public ResultObject GetListBySupplier(int page, int count, int supplierId)
+        [Route("GetListBySupplier/{supplierId}/{page}/{size}")]
+        public ResultObject GetListBySupplier(int supplierId, int page, int size)
         {
-            if (context.Suppliers.Exists(supplierId))
+            if (context.Suppliers.Contains(supplierId))
             {
-                return new ResultObject(true, context.Products.GetListBySupplier(page, count, supplierId));
+                int total = 1;
+                return new ResultObject(true, context.Products.GetListBySupplier(supplierId, out total, page, size), total);
             }
             return new ResultObject(false, "", "SupplierId not found");
         }
@@ -69,7 +73,7 @@ namespace ProductApp.API.Controllers
         [Route("Update")]
         public ResultObject Update([FromBody]Product req)
         {
-            if (context.Products.Exists(req.Id))
+            if (context.Products.Contains(req.Id))
             {
                 return new ResultObject(true, context.Products.Update(req));
             }
@@ -80,7 +84,7 @@ namespace ProductApp.API.Controllers
         [Route("Delete/{id}")]
         public ResultObject Delete(int id)
         {
-            if (context.Products.Exists(id))
+            if (context.Products.Contains(id))
             {
                 return new ResultObject(true, context.Products.Delete(id));
             }
