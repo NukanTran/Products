@@ -143,8 +143,8 @@ namespace ProductApp.DAL.Infrastructure
 
         public virtual bool Update(T entity)
         {
-            dbSet.Attach(entity);
             DbContext.Entry(entity).State = EntityState.Modified;
+            dbSet.Attach(entity);
             return DbContext.SaveChanges() > 0;
         }
 
@@ -162,12 +162,19 @@ namespace ProductApp.DAL.Infrastructure
 
         protected IQueryable<T> QueryIncludes(string[] includes)
         {
-            var query = DbContext.Set<T>().Include(includes.First());
-            foreach (var include in includes.Skip(1))
+            if (includes.Count() > 0)
             {
-                query = query.Include(include);
+                var query = dbSet.Include(includes.First());
+                foreach (var include in includes.Skip(1))
+                {
+                    query = query.Include(include);
+                }
+                return query;
             }
-            return query;
+            else
+            {
+                return dbSet;
+            }
         }
     }
 }

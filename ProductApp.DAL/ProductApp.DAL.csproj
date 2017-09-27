@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -61,11 +65,25 @@
     <Compile Include="DAO\PhoneDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
+    <Compile Include="Extensions\Mappers\ClotheExtensions.cs" />
+    <Compile Include="Extensions\Mappers\CustomerExtensions.cs" />
+    <Compile Include="Extensions\Mappers\OrderExtensions.cs" />
+    <Compile Include="Extensions\Mappers\OrderItemExtensions.cs" />
+    <Compile Include="Extensions\Mappers\PhoneExtensions.cs" />
+    <Compile Include="Extensions\Mappers\ProductExtensions.cs" />
+    <Compile Include="Extensions\Mappers\SupplierExtensions.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDbFactory.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Models\ClotheViewModel.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
+    <Compile Include="Models\OrderItemViewModel.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\PhoneViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\SupplierViewModel.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>ProductEntityModel.tt</DependentUpon>
     </Compile>
@@ -109,7 +127,9 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="ProductEntityModel.edmx.diagram">
       <DependentUpon>ProductEntityModel.edmx</DependentUpon>

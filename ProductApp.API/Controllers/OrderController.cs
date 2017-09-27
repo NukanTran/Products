@@ -4,23 +4,12 @@ using System.Web.Http;
 
 namespace ProductApp.API.Controllers
 {
-    public interface IOrderController
+    public interface IOrderController : IApiController<Order>
     {
-        ResultObject Get(int id);
-
-        ResultObject GetAll();
-
-        ResultObject GetListPaging(int page, int size);
 
         ResultObject GetListByCustomer(int supplierId, int page, int size);
 
         ResultObject GetListByDate(string fromDate, string toDate, int page, int size);
-
-        ResultObject Insert([FromBody]Order req);
-
-        ResultObject Update([FromBody]Order req);
-
-        ResultObject Delete(int id);
     }
 
     [RoutePrefix("api/order")]
@@ -37,34 +26,62 @@ namespace ProductApp.API.Controllers
         [Route("GetById/{id}")]
         public ResultObject Get(int id)
         {
-            if (context.Orders.Contains(id))
-            {
-                return new ResultObject(true, context.Orders.Get(id).ToViewModel());
+            try
+            { 
+                if (context.Orders.Contains(id))
+                {
+                    return new ResultObject(true, context.Orders.Get(id).ToViewModel());
+                }
+                return new ResultObject(false, null, "Id not found");
             }
-            return new ResultObject(false, "", "Id not found");
+            catch (Exception e)
+            {
+                return new ResultObject(false, null, e.Message);
+            }
         }
 
         [HttpGet]
         [Route("GetAll")]
         public ResultObject GetAll()
         {
-            return new ResultObject(true, context.Orders.GetAll().ToViewModel(), context.Orders.Count());
+            try
+            {
+                return new ResultObject(true, context.Orders.GetAll().ToViewModel(), context.Orders.Count());
+            }
+            catch (Exception e)
+            {
+                return new ResultObject(false, null, e.Message);
+            }
         }
 
         [HttpGet]
         [Route("GetListPaging/{page}/{size}")]
         public ResultObject GetListPaging(int page, int size)
         {
-            int total = 1;
-            return new ResultObject(true, context.Orders.GetListPaging(out total, page, size).ToViewModel(), total);
+            try
+            { 
+                int total = 1;
+                return new ResultObject(true, context.Orders.GetListPaging(out total, page, size).ToViewModel(), total);
+            }
+            catch (Exception e)
+            {
+                return new ResultObject(false, null, e.Message);
+            }
         }
 
         [HttpGet]
         [Route("GetListByCustomer/{customerId}/{page}/{size}")]
         public ResultObject GetListByCustomer(int customerId, int page, int size)
         {
-            int total = 1;
-            return new ResultObject(true, context.Orders.GetListByCustomer(customerId, out total, page, size).ToViewModel(), total);
+            try
+            { 
+                int total = 1;
+                return new ResultObject(true, context.Orders.GetListByCustomer(customerId, out total, page, size).ToViewModel(), total);
+            }
+            catch (Exception e)
+            {
+                return new ResultObject(false, null, e.Message);
+            }
         }
 
         [HttpGet]
@@ -81,7 +98,7 @@ namespace ProductApp.API.Controllers
             }
             catch (FormatException e)
             {
-                return new ResultObject(false, "", e.Message);
+                return new ResultObject(false, null, e.Message);
             }
         }
 
@@ -89,29 +106,50 @@ namespace ProductApp.API.Controllers
         [Route("Insert")]
         public ResultObject Insert([FromBody]Order req)
         {
-            return new ResultObject(true, context.Orders.Add(req).Id);
+            try
+            { 
+                return new ResultObject(true, context.Orders.Add(req).Id);
+            }
+            catch (Exception e)
+            {
+                return new ResultObject(false, null, e.Message);
+            }
         }
 
         [HttpPost]
         [Route("Update")]
         public ResultObject Update([FromBody]Order req)
         {
-            if (context.Orders.Contains(req.Id))
-            {
-                return new ResultObject(true, context.Orders.Update(req));
+            try
+            { 
+                if (context.Orders.Contains(req.Id))
+                {
+                    return new ResultObject(true, context.Orders.Update(req));
+                }
+                return new ResultObject(false, null, "Id not found");
             }
-            return new ResultObject(false, "", "Id not found");
+            catch (Exception e)
+            {
+                return new ResultObject(false, null, e.Message);
+            }
         }
 
         [HttpGet]
         [Route("Delete/{id}")]
         public ResultObject Delete(int id)
         {
-            if (context.Orders.Contains(id))
-            {
-                return new ResultObject(true, context.Orders.Delete(id));
+            try
+            { 
+                if (context.Orders.Contains(id))
+                {
+                    return new ResultObject(true, context.Orders.Delete(id));
+                }
+                return new ResultObject(false, null, "Id not found");
             }
-            return new ResultObject(false, "", "Id not found");
+            catch (Exception e)
+            {
+                return new ResultObject(false, null, e.Message);
+            }
         }
     }
 }

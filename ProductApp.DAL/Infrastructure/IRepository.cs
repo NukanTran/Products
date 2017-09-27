@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace ProductApp.DAL.Infrastructure
 {
-    internal interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         T Add(T entity);
 

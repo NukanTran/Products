@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace ProductApp.DAL.DAO
 {
-    public interface IProductDAO<T> where T : Product
+    public interface IProductDAO<T> : IRepository<T> where T : Product
     {
         IEnumerable<T> GetListPaging(out int total, int page = 0, int size = 50, Expression<Func<T, bool>> expression = null, string[] includes = null);
 

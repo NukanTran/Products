@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 using ProductApp.DAL;
-using ProductApp.API.Models;
 
 namespace ProductApp.API
 {
