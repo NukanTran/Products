@@ -8,6 +8,7 @@ namespace ProductApp.API.Controllers
         ResultObject Get(int id);
 
         ResultObject GetAll();
+
         ResultObject GetListPaging(int page, int size);
 
         ResultObject Insert([FromBody]T req);

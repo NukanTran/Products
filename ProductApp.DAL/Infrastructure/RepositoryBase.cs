@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -143,8 +144,7 @@ namespace ProductApp.DAL.Infrastructure
 
         public virtual bool Update(T entity)
         {
-            DbContext.Entry(entity).State = EntityState.Modified;
-            dbSet.Attach(entity);
+            dbSet.AddOrUpdate(entity);
             return DbContext.SaveChanges() > 0;
         }
 

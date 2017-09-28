@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html ng-app="productapp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body ng-controller="productListController">
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            List product
+        </div>
+        <div>
+            <table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+                <thead>
+                    <tr>
+                        <th data-breakpoints="xs">ID</th>
+                        <th>Product Name</th>
+                        <th>Supplier Name</th>
+                        <th data-breakpoints="xs">Unit Price</th>
+                        <th data-breakpoints="xs sm md" data-title="DOB">Package</th>
+                        <th data-breakpoints="xs sm md" data-title="DOB">Discontinued</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in listProduct" data-expanded="true">
+                        <td>{{product.ID}}</td>
+                        <td>{{product.ProductName}}</td>
+                        <td>{{product.SupplierName}}</td>
+                        <td>{{product.UnitPrice}}</td>
+                        <td>{{product.Package}}</td>
+                        <td>{{product.IsDiscontinued}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>{{error}}</h2>
+        </div>
+    </div>
+
+</body>
+</html>

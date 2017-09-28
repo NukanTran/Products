@@ -1,0 +1,8 @@
+{
+  "name": "products",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.6.6",
+    "angular-ui-router": "~1.0.6"
+  }
+}
