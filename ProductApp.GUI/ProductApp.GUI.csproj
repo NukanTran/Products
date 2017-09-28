@@ -222,11 +222,17 @@
     <Content Include="app\compoments\products\productAddController.js" />
     <Content Include="app\compoments\products\productEditView.html" />
     <Content Include="app\compoments\products\productEditController.js" />
+    <Content Include="app\compoments\products\clotheListController.js" />
+    <Content Include="app\compoments\products\phoneListController.js" />
+    <Content Include="app\compoments\products\clotheListView.html" />
+    <Content Include="app\compoments\products\phoneListView.html" />
     <Content Include="app\compoments\products\productListView.html" />
     <Content Include="app\compoments\products\productListController.js" />
     <Content Include="app\compoments\suppliers\supplierListController.js" />
     <Content Include="app\compoments\suppliers\supplierListView.html" />
     <Content Include="app\compoments\suppliers\suppliers.module.js" />
+    <Content Include="app\shared\directives\pagerDirective.html" />
+    <Content Include="app\shared\directives\pagerDirective.js" />
     <Content Include="app\shared\modules\productapp.common.js" />
     <Content Include="app\shared\services\api.service.js" />
     <Content Include="bower_components\angular-ui-router\karma.conf.js" />

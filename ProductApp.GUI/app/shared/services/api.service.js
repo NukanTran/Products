@@ -7,14 +7,14 @@
         return {
             get : get
         }
-    }
 
-    function get(url, params, success, failure) {
-        $http.get(url, params).then(function (result) {
-            success(result);
-        }, function (error) {
-            failure(error);
-        });
+        function get(url, params, success, failure) {
+            $http.get(url, params).then(function (result) {
+                success(result);
+            }, function (error) {
+                failure(error);
+            });
+        }
     }
 
 })(angular.module("productapp.common"));

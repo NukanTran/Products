@@ -10,6 +10,14 @@
             url: "/products",
             templateUrl: "/app/compoments/products/productListView.html",
             controller: "productListController"
+        }).state("phones", {
+            url: "/phones",
+            templateUrl: "/app/compoments/products/phoneListView.html",
+            controller: "phoneListController"
+        }).state("clothes", {
+            url: "/clothes",
+            templateUrl: "/app/compoments/products/clotheListView.html",
+            controller: "clotheListController"
         }).state("product_add", {
             url: "/product_add",
             templateUrl: "/app/compoments/products/productAddView.html",

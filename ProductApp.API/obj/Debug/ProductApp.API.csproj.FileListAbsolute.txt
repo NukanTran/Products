@@ -300,3 +300,6 @@ C:\Users\lam.tran\Documents\GIT\Products\ProductApp.API\obj\Debug\ProductApp.API
 C:\Users\lam.tran\Documents\GIT\Products\ProductApp.API\obj\Debug\ProductApp.API.csproj.CoreCompileInputs.cache
 C:\Users\lam.tran\Documents\GIT\Products\ProductApp.API\obj\Debug\ProductApp.API.dll
 C:\Users\lam.tran\Documents\GIT\Products\ProductApp.API\obj\Debug\ProductApp.API.pdb
+C:\Users\lam.tran\Documents\GIT\Products\ProductApp.API\bin\System.Web.Cors.dll
+C:\Users\lam.tran\Documents\GIT\Products\ProductApp.API\bin\System.Web.Http.Cors.dll
+C:\Users\lam.tran\Documents\GIT\Products\ProductApp.API\bin\System.Web.Http.Cors.xml

@@ -271,10 +271,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
 
                         <li class="sub-menu">
-                            <a ui-sref="products">
+                            <a href="javascript:;">
                                 <i class="fa fa-archive"></i>
                                 <span>Products</span>
                             </a>
+                            <ul class="sub">
+                                <li><a ui-sref="products">All product</a></li>
+                                <li><a ui-sref="phones">Phones</a></li>
+                                <li><a ui-sref="clothes">Clothes</a></li>
+                            </ul>
                         </li>
                         <li class="sub-menu">
                             <a ui-sref="suppliers">
@@ -534,6 +539,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="~/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/app/shared/modules/productapp.common.js"></script>
     <script src="~/app/shared/services/api.service.js"></script>
+    <script src="~/app/shared/directives/pagerDirective.js"></script>
     <script src="~/app/compoments/products/products.module.js"></script>
     <script src="~/app/compoments/suppliers/suppliers.module.js"></script>
     <script src="~/app/compoments/customers/customers.module.js"></script>
@@ -541,8 +547,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="~/app/app.js"></script>
     <script src="~/app/compoments/homeController.js"></script>
     <script src="~/app/compoments/products/productListController.js"></script>
+    <script src="~/app/compoments/products/phoneListController.js"></script>
+    <script src="~/app/compoments/products/clotheListController.js"></script>
     <script src="~/app/compoments/products/productEditController.js"></script>
     <script src="~/app/compoments/products/productAddController.js"></script>
+    <script src="~/app/compoments/customers/customerListController.js"></script>
+    <script src="~/app/compoments/orders/orderListController.js"></script>
+    <script src="~/app/compoments/suppliers/supplierListController.js"></script>
     <!-- End embed angularJS -->
 </body>
 </html>
