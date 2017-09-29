@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <html ng-app="productapp">
 <head>
-    <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <title>Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -38,6 +38,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="~/resources/admin/js/jquery2.0.3.min.js"></script>
     <script src="~/resources/admin/js/raphael-min.js"></script>
     <script src="~/resources/admin/js/morris.js"></script>
+
+    <link href="~/bower_components/toastr/toastr.css" rel="stylesheet" />
+
 </head>
 <body>
     <section id="container">
@@ -402,12 +405,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-3 market-update-gd">
                         <div class="market-update-block clr-block-2">
                             <div class="col-md-4 market-update-right">
-                                <i class="fa fa-eye"> </i>
+                                <i class="fa fa-archive"> </i>
                             </div>
                             <div class="col-md-8 market-update-left">
-                                <h4>Visitors</h4>
+                                <h4>Products</h4>
                                 <h3>13,500</h3>
-                                <p>Other hand, we denounce</p>
+                                <p></p>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -415,12 +418,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-3 market-update-gd">
                         <div class="market-update-block clr-block-1">
                             <div class="col-md-4 market-update-right">
-                                <i class="fa fa-users"></i>
+                                <i class="fa fa-user-secret"></i>
                             </div>
                             <div class="col-md-8 market-update-left">
-                                <h4>Users</h4>
+                                <h4>Suppliers</h4>
                                 <h3>1,250</h3>
-                                <p>Other hand, we denounce</p>
+                                <p></p>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -428,12 +431,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-md-3 market-update-gd">
                         <div class="market-update-block clr-block-3">
                             <div class="col-md-4 market-update-right">
-                                <i class="fa fa-usd"></i>
+                                <i class="fa fa-users"></i>
                             </div>
                             <div class="col-md-8 market-update-left">
-                                <h4>Sales</h4>
+                                <h4>Customers</h4>
                                 <h3>1,500</h3>
-                                <p>Other hand, we denounce</p>
+                                <p></p>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -446,7 +449,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="col-md-8 market-update-left">
                                 <h4>Orders</h4>
                                 <h3>1,500</h3>
-                                <p>Other hand, we denounce</p>
+                                <p></p>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
@@ -537,8 +540,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- Begin embed angularJS -->
     <script src="~/bower_components/angular/angular.js"></script>
     <script src="~/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/bower_components/toastr/toastr.js"></script>
+    <script src="~/bower_components/bootbox/bootbox.js"></script>
+    <script src="~/bower_components/ngBootbox/ngBootbox.js"></script>
+
     <script src="~/app/shared/modules/productapp.common.js"></script>
     <script src="~/app/shared/services/api.service.js"></script>
+    <script src="~/app/shared/services/notifyService.js"></script>
     <script src="~/app/shared/directives/pagerDirective.js"></script>
     <script src="~/app/compoments/products/products.module.js"></script>
     <script src="~/app/compoments/suppliers/suppliers.module.js"></script>

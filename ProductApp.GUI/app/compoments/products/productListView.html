@@ -13,6 +13,24 @@
             List Product
         </div>
         <div>
+
+            <div class="row panel-body">
+                <div class="col-lg-4 in-gp-tb">
+                    <div class="input-group">
+                        <input ng-model="searchKey" type="text" class="form-control" placeholder="Search for Name or Supplier">
+                        <span class="input-group-btn">
+                            <button ng-click="search()" class="btn btn-info" type="button">Search</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-3 in-gp-tb">
+                    <div class="input-group">
+                        <button ui-sref="product_add" class="btn btn-success" type="button">Add new</button>
+                    </div>
+                </div>
+            </div>
+
+
             <table class="table" ui-jq="footable" ui-options='{
         "paging": {
           "enabled": true
@@ -31,7 +49,7 @@
                         <th data-breakpoints="xs">Unit Price</th>
                         <th data-breakpoints="xs sm md" data-title="DOB">Package</th>
                         <th data-breakpoints="xs sm md" data-title="DOB" class="text-center">Discontinued</th>
-
+                        <th data-breakpoints="xs sm md" data-title="DOB" class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,17 +59,27 @@
                         <td>{{product.SupplierName}}</td>
                         <td>{{product.UnitPrice}}</td>
                         <td>{{product.Package}}</td>
-                        <td class="text-center"><i ng-class="{'fa fa-check text-success text-active': product.IsDiscontinued, 'fa fa-times text-danger text': !product.IsDiscontinued}"></i></td>
+                        <td class="text-center">
+                            <i ng-class="{'fa fa-dot-circle-o text-success text-active': product.IsDiscontinued, 'fa fa-dot-circle-o text-danger text': !product.IsDiscontinued}"></i>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-default"><i class="fa fa-pencil text-primary text-active"></i></button>
+                            <button class="btn btn-default" ng-click="deleteConfirm(product.Id)" style="margin-left: 10px"><i class="fa fa-times text-danger text"></i></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-
-            <div class="col-sm-7 text-right text-center-xs">
-                <div class="pagination pagination-sm m-t-none m-b-none">
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-5 text-center">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing {{pageSize*page}}-{{pageSize*page + listProduct.length}} of {{totalCount}} items</small>
+                </div>
+                <div class="col-sm-7 text-right text-center-xs">
                     <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getListProduct(page)"></pager-directive>
                 </div>
             </div>
-        </div>
+        </footer>
     </div>
 
 </body>

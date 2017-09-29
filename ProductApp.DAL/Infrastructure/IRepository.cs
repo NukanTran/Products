@@ -23,7 +23,7 @@ namespace ProductApp.DAL.Infrastructure
 
         T Get(Expression<Func<T, bool>> expression, string[] includes = null);
 
-        IEnumerable<T> GetAll(string[] includes = null);
+        IEnumerable<T> GetAll(Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string[] includes = null);
 
         IEnumerable<T> Where(Expression<Func<T, bool>> expression, string[] includes = null);
 

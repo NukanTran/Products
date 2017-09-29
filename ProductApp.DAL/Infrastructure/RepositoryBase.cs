@@ -112,15 +112,31 @@ namespace ProductApp.DAL.Infrastructure
             return dbSet.Find(id);
         }
 
-        public virtual IEnumerable<T> GetAll(string[] includes = null)
+        public virtual IEnumerable<T> GetAll(Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string[] includes = null)
         {
             if (includes != null && includes.Count() > 0)
             {
-                return QueryIncludes(includes);
+                if (orderBy == null)
+                {
+                    return QueryIncludes(includes);
+                }
+                else
+                {
+                    var res = QueryIncludes(includes);
+                    return orderBy(res);
+                }
             }
             else
             {
-                return dbSet.AsEnumerable();
+                if (orderBy == null)
+                {
+                    return dbSet.AsEnumerable();
+                }
+                else
+                {
+                    var res = dbSet.AsQueryable();
+                    return orderBy(res);
+                }
             }
         }
 

@@ -748,12 +748,12 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     color:#fff;
    text-align: left;
 }
-.market-update-right i.fa.fa-eye {
-     font-size: 3em;
-    color:#fff;
-   text-align: left;
+.market-update-right i.fa.fa-archive {
+    font-size: 3em;
+    color: #fff;
+    text-align: left;
 }
-.market-update-right i.fa.fa-usd {
+.market-update-right i.fa.fa-user-secret {
      font-size:3em;
     color:#fff;
     text-align: left;

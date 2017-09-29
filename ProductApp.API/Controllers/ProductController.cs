@@ -67,6 +67,21 @@ namespace ProductApp.API.Controllers
         }
 
         [HttpGet]
+        [Route("GetListPaging/{page}/{size}/{searchKey}")]
+        public ResultObject GetListPaging(int page, int size, string searchKey)
+        {
+            try
+            {
+                int total = 1;
+                return new ResultObject(true, context.Products.GetListPaging(out total, page, size, searchKey).ToViewModel(), total);
+            }
+            catch (Exception e)
+            {
+                return new ResultObject(false, null, e.Message);
+            }
+        }
+
+        [HttpGet]
         [Route("GetListBySupplier/{supplierId}/{page}/{size}")]
         public ResultObject GetListBySupplier(int supplierId, int page, int size)
         {
